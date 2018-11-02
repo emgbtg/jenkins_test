@@ -26,7 +26,7 @@ else if (isPullRequest) {
 }
 node() {
     stage('testing'){
-        sh 'echo "Running ${env.BRANCH_NAME} on ${env.JENKINS_URL}" '
+        sh 'echo dev '
     }
 }
 
