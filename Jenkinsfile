@@ -26,7 +26,15 @@ else if (isPullRequest) {
 }
 node() {
     stage('testing'){
-        sh 'echo dev '
+        if (env.BRANCH_NAME == "dev") {
+            sh 'echo dev '
+        }
+        else if (env.BRANCH_NAME == "master") {
+            sh 'echo master '
+        }
+        else if (isPullRequest) {
+            sh 'pull request'
+        }
     }
 }
 
