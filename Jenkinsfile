@@ -25,16 +25,6 @@ else if (isPullRequest) {
    // sh 'echo **********pr**********'
 }
 
-node {
-    pipeline {
-        agent any
-        stages {
-            stage('Example') {
-                steps {
+
                     echo "Running ${env.BRANCH_NAME} on ${env.JENKINS_URL}"
-                }
-            }
-        }
-    }
-}
 
