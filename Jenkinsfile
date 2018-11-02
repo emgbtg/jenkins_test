@@ -25,5 +25,5 @@ else if (isPullRequest) {
    // sh 'echo **********pr**********'
 }
 
-echo "Running ${env.BRANCH_NAME} on ${env.JENKINS_URL}"
+//echo "Running ${env.BRANCH_NAME} on ${env.JENKINS_URL}"
 
