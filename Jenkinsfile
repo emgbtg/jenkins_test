@@ -27,16 +27,17 @@ else if (isPullRequest) {
 node() {
     stage('testing'){
         if (env.BRANCH_NAME == "dev") {
-            sh 'echo dev '
+            sh 'echo dev'
+            sh ("printenv")
         }
         else if (env.BRANCH_NAME == "master") {
-            sh 'echo master '
+            sh 'echo master'
+            sh ("printenv")
         }
         else if (isPullRequest) {
             sh 'pull request'
+            sh ("printenv")
         }
     }
 }
-
-//echo "Running ${env.BRANCH_NAME} on ${env.JENKINS_URL}"
 
