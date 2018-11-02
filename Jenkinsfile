@@ -24,6 +24,11 @@ else if (isPullRequest) {
     buildScheme = pullRequestBuildScheme
    // sh 'echo **********pr**********'
 }
+node('ios node') {
+    stage('testing'){
+        sh 'echo "Running ${env.BRANCH_NAME} on ${env.JENKINS_URL}" '
+    }
+}
 
 //echo "Running ${env.BRANCH_NAME} on ${env.JENKINS_URL}"
 
