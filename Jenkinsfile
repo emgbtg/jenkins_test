@@ -10,7 +10,7 @@ ipaFilename = ""
 hockeyAppToken = ""
 hockeyAppId = ""
 
-isPullRequest = env.BRANCH_NAME.startsWith("PR")
+isPullRequest = env.BRANCH_NAME.startsWith('PR')
 
 if (env.BRANCH_NAME == "dev") {
     buildScheme = devBuildScheme
@@ -26,16 +26,17 @@ else if (isPullRequest) {
 }
 node() {
     stage('testing'){
-        if (env.BRANCH_NAME == "dev") {
-            sh 'echo dev'
+        if (isPullRequest) {
+            sh 'pull request'
             sh ("printenv")
         }
+
         else if (env.BRANCH_NAME == "master") {
             sh 'echo master'
             sh ("printenv")
         }
-        else if (isPullRequest) {
-            sh 'pull request'
+        else if (env.BRANCH_NAME == "dev") {
+            sh 'echo dev'
             sh ("printenv")
         }
     }
