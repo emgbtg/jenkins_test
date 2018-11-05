@@ -27,7 +27,7 @@ else if (isPullRequest) {
 }
 node() {
     stage('testing'){
-
+        checkout scm
         if (isPullRequest) {
             sh 'echo pull request'
         }
