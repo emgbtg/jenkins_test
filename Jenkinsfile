@@ -13,15 +13,15 @@ hockeyAppId = ""
 isPullRequest = env.BRANCH_NAME.startsWith('PR')
 
 if (env.BRANCH_NAME == "dev") {
-    buildScheme = devBuildScheme
+   // buildScheme = devBuildScheme
     //sh 'echo **********dev branch**********'
 }
 else if (env.BRANCH_NAME == "master") {
-    buildScheme = releaseBuildScheme
+    //buildScheme = releaseBuildScheme
     //sh 'echo **********master branch**********'
 }
 else if (isPullRequest) {
-    buildScheme = pullRequestBuildScheme
+   // buildScheme = pullRequestBuildScheme
    // sh 'echo **********pr**********'
 }
 node() {
