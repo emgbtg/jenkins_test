@@ -28,7 +28,7 @@ node() {
     stage('testing'){
         if (isPullRequest) {
             sh 'pull request'
-            sh ("****PR*****printenv")
+            sh ("****PR******printenv")
         }
 
         else if (env.BRANCH_NAME == "master") {
