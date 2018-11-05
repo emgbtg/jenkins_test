@@ -28,16 +28,13 @@ node() {
     stage('testing'){
         if (isPullRequest) {
             sh 'echo pull request'
-            sh ("printenv")
         }
 
         else if (env.BRANCH_NAME == "master") {
             sh 'echo master'
-            sh ("printenv")
         }
         else if (env.BRANCH_NAME == "dev") {
             sh 'echo dev'
-            sh ("printenv")
         }
     }
 }
