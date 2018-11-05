@@ -47,5 +47,5 @@ def build() {
     //sh 'echo build function print'
 
     def rootDir = pwd()
-    def pipelineScripts = load "${rootDir}@script/AppPipeLineSteps.Groovy "
+    def pipelineScripts = load "${rootDir}/AppPipeLineSteps.Groovy"
 }
