@@ -27,7 +27,7 @@ else if (isPullRequest) {
 }
 node() {
     stage('testing'){
-        checkout scm
+        //checkout scm
         def pipelineScripts = load pwd() + '/AppPipeLineSteps.groovy'
         pipelineScripts.testFunc()
 
