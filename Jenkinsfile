@@ -27,7 +27,7 @@ else if (isPullRequest) {
 node() {
     stage('testing'){
         if (isPullRequest) {
-            sh 'echo pull request'
+            sh 'echo pull request '
         }
 
         else if (env.BRANCH_NAME == "master") {
