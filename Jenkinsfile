@@ -42,7 +42,10 @@ node() {
 }
 
 def build() {
-    def pipelineScripts = load "AppPipeLineSteps.groovy"
-    pipelineScripts.testFunc()
-    sh 'echo build function print'
+    //def pipelineScripts = load "AppPipeLineSteps.groovy"
+    //pipelineScripts.testFunc()
+    //sh 'echo build function print'
+
+    def rootDir = pwd()
+    def pipelineScripts = load "${rootDir}@script/AppPipeLineSteps.Groovy "
 }
