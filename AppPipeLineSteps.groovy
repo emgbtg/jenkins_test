@@ -1,6 +1,6 @@
 
 def testFunc() {
     echo "running fastlane"
-    fastlane generate_ipa_develop
+    pwd
 }
 return this
