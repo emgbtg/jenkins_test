@@ -27,7 +27,7 @@ else if (isPullRequest) {
 node() {
     stage('testing'){
         if (isPullRequest) {
-            sh '****pull request***'
+            sh 'echo pull request'
             sh ("printenv")
         }
 
