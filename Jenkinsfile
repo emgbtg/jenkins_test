@@ -42,6 +42,6 @@ node() {
 }
 
 def build() {
-    def pipelineScripts = load "AppPipelineSteps-v2.groovy"
+    def pipelineScripts = load "AppPipelineSteps.groovy"
     pipelineScripts.testFunc()
 }
