@@ -1,5 +1,6 @@
 isPullRequest = true
 
+pullRequestBuildScheme = "Debug"
 devBuildScheme = "Dev"
 betaBuildScheme = "Beta"
 releaseBuildScheme = "Release"
@@ -13,16 +14,16 @@ hockeyAppId = ""
 isPullRequest = env.BRANCH_NAME.startsWith('PR')
 
 if (env.BRANCH_NAME == "dev") {
-   // buildScheme = devBuildScheme
-    //sh 'echo **********dev branch**********'
+    // buildScheme = devBuildScheme
+    // sh 'echo **********dev branch**********'
 }
 else if (env.BRANCH_NAME == "master") {
-    //buildScheme = releaseBuildScheme
-    //sh 'echo **********master branch**********'
+    // buildScheme = releaseBuildScheme
+    // sh 'echo **********master branch**********'
 }
 else if (isPullRequest) {
-   // buildScheme = pullRequestBuildScheme
-   // sh 'echo **********pr**********'
+    // buildScheme = pullRequestBuildScheme
+    // sh 'echo **********pr**********'
 }
 node() {
     stage('testing'){
@@ -37,4 +38,9 @@ node() {
             sh 'echo dev'
         }
     }
+}
+
+def build() {
+    def pipelineScripts = load "AppPipelineSteps-v2.groovy"
+    pipelineScripts.testFunc() 
 }
