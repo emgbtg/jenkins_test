@@ -44,5 +44,5 @@ node() {
 def build() {
     //def pipelineScripts = load "AppPipelineSteps.groovy"
     //pipelineScripts.testFunc()
-    sh 'echo build'
+    sh 'echo build function print'
 }
