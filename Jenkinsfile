@@ -27,8 +27,6 @@ else if (isPullRequest) {
 }
 node() {
     stage('testing'){
-        //checkout scm
-
 
         if (isPullRequest) {
             sh 'echo pull request'
@@ -45,12 +43,6 @@ node() {
 }
 
 def build() {
-    //def pipelineScripts = load "AppPipeLineSteps.groovy"
-    //pipelineScripts.testFunc()
-    //sh 'echo build function print'
-
-    //def rootDir = pwd()
-    //def pipelineScripts = load "${rootDir}/AppPipeLineSteps.groovy"
     def pipelineScripts = load pwd() + '/AppPipeLineSteps.groovy'
     pipelineScripts.testFunc()
 }
