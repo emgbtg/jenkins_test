@@ -1,3 +1,3 @@
 def testFunc() {
-    echo "print from groovy file!"
+    //echo "print from groovy file!"
 }
