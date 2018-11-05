@@ -29,6 +29,8 @@ node() {
     stage('testing'){
         checkout scm
         def pipelineScripts = load pwd() + '/AppPipeLineSteps.groovy'
+        pipelineScripts.testFunc()
+
         if (isPullRequest) {
             sh 'echo pull request'
         }
