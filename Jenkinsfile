@@ -26,8 +26,7 @@ else if (isPullRequest) {
     // sh 'echo **********pr**********'
 }
 node() {
-    stage('testing'){
-        
+    stage('testing') {
         if (isPullRequest) {
             sh 'echo pull request'
         }
